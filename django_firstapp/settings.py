@@ -124,12 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) 
 STATIC_URL = '/static/'
-
-# 2. Tell Django where to collect ALL static files (including admin's)
-# This directory MUST be outside of your project directory for production best practices
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_collected')
-
-
+STATIC_ROOT = BASE_DIR / 'static' # Or any other suitable path
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
