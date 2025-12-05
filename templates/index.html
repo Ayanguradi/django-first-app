@@ -92,15 +92,28 @@
       }
     </style>
   </head>
+
   <body>
     <div class="container">
       <h1>My To-Do List</h1>
       <div class="input-group">
-        <input type="text" id="task-input" placeholder="Add a new task..." />
-        <button id="add-task-btn">Add</button>
+        <form method="POST" action="{% url 'add-task' %}">
+          {% csrf_token %}
+          <input
+            type="text"
+            id="task-input"
+            name="task-input"
+            placeholder="Add a new task..."
+          />
+          <button type="submit">Add</button>
+        </form>
       </div>
+
       <ul id="task-list">
         <!-- To-Do items will be added here by JavaScript -->
+        {% for todo in todo_list %}
+        <li>{{todo}}</li>
+        {% endfor%}
       </ul>
     </div>
     <script>
