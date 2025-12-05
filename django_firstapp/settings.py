@@ -26,8 +26,9 @@ SECRET_KEY = 'django-insecure-*k8qt#v&(ll7jlenjlm@fs++ld9zr%l9y45^0_#v@0#10brtd3
 DEBUG = True
 
 
-
-ALLOWED_HOSTS = ['django-first-app-env.eba-pue8aqhm.us-west-2.elasticbeanstalk.com', 'localhost', '127.0.0.1']
+import socket
+import os
+ALLOWED_HOSTS = ['172.31.28.200','django-first-app-env.eba-pue8aqhm.us-west-2.elasticbeanstalk.com', 'localhost', '127.0.0.1']
 
 
 
